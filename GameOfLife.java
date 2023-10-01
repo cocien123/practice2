@@ -90,12 +90,12 @@ public class GameOfLife {
     }
 
     private static void render(Set<Cell> cells) {
-        final int width = 70;
-        final int height = 20;
-        char[][] display = new char[height][width];
+        final int width = 40;
+        final int height = 40;
+        char[][] display = new char[width][height];
 
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
                 display[i][j] = '.';
             }
         }
@@ -106,8 +106,8 @@ public class GameOfLife {
             }
         }
 
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
+        for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
                 System.out.print(display[i][j]);
             }
             System.out.println();
@@ -115,7 +115,8 @@ public class GameOfLife {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        List<Cell> glider = List.of(new Cell(1, 3), new Cell(2, 1), new Cell(2, 3), new Cell(3, 2), new Cell(3, 3));
+
+        List<Cell> glider = List.of(new Cell(0, 2), new Cell(1, 0), new Cell(1, 2), new Cell(2, 1), new Cell(2, 2));
         GameOfLife game = new GameOfLife(glider);
 
         for (int i = 0; i < 30; i++) {
